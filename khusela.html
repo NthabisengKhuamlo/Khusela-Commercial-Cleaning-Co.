@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Khusela Commercial Cleaning Co. | Cape Town</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --navy: #0B1F3A;
+  --navy-mid: #162D50;
+  --teal: #1A7F6E;
+  --teal-light: #22A88F;
+  --sand: #F5F0E8;
+  --sand-dark: #E8E0D0;
+  --white: #FFFFFF;
+  --text-dark: #0B1F3A;
+  --text-mid: #3A5070;
+  --text-light: #7A90A8;
+  --accent: #C8A96A;
+}
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; font-weight: 300; color: var(--text-dark); background: var(--white); overflow-x: hidden; }
+
+/* NAV */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; background: rgba(11,31,58,0.98); backdrop-filter: blur(8px); }
+.nav-top { display: flex; align-items: center; justify-content: space-between; padding: 0.9rem 4rem; border-bottom: 1px solid rgba(255,255,255,0.07); }
+.nav-logo { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--white); letter-spacing: 0.02em; text-decoration: none; }
+.nav-logo span { color: var(--accent); }
+.nav-contact-strip { display: flex; gap: 2rem; align-items: center; }
+.nav-contact-strip a { font-size: 0.75rem; color: rgba(255,255,255,0.5); text-decoration: none; letter-spacing: 0.05em; transition: color 0.2s; }
+.nav-contact-strip a:hover { color: var(--accent); }
+.nav-cta-top { background: var(--teal); color: var(--white); padding: 0.48rem 1.25rem; border-radius: 2px; font-size: 0.74rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: background 0.2s; }
+.nav-cta-top:hover { background: var(--teal-light); }
+.nav-bottom { display: flex; align-items: center; justify-content: center; padding: 0 4rem; }
+.nav-bottom a { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.55); text-decoration: none; padding: 0.7rem 1.3rem; border-right: 1px solid rgba(255,255,255,0.07); transition: color 0.2s, background 0.2s; white-space: nowrap; }
+.nav-bottom a:first-child { border-left: 1px solid rgba(255,255,255,0.07); }
+.nav-bottom a:hover { color: var(--accent); background: rgba(255,255,255,0.03); }
+
+/* HERO */
+.hero { min-height: 100vh; background: var(--navy); display: grid; grid-template-columns: 1fr 1fr; position: relative; overflow: hidden; padding-top: 108px; }
+.hero::before { content: ''; position: absolute; top: -20%; right: -10%; width: 60%; height: 120%; background: radial-gradient(ellipse, rgba(26,127,110,0.15) 0%, transparent 70%); pointer-events: none; }
+.hero-left { display: flex; flex-direction: column; justify-content: center; padding: 5rem 3rem 5rem 4rem; position: relative; z-index: 2; }
+.hero-eyebrow { font-size: 0.67rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
+.hero-eyebrow::before { content: ''; display: block; width: 30px; height: 1px; background: var(--accent); }
+.hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.6rem, 4.5vw, 4rem); font-weight: 700; line-height: 1.1; color: var(--white); margin-bottom: 1.5rem; }
+.hero h1 em { font-style: normal; color: var(--teal-light); }
+.hero-sub { font-size: 1rem; font-weight: 300; line-height: 1.75; color: rgba(255,255,255,0.62); max-width: 440px; margin-bottom: 2.5rem; }
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--teal); color: var(--white); padding: 0.88rem 2rem; border-radius: 2px; font-size: 0.84rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; border: none; cursor: pointer; font-family: inherit; transition: background 0.2s, transform 0.15s; }
+.btn-primary:hover { background: var(--teal-light); transform: translateY(-1px); }
+.btn-ghost { display: inline-flex; align-items: center; gap: 0.5rem; border: 1px solid rgba(255,255,255,0.25); color: rgba(255,255,255,0.8); padding: 0.88rem 2rem; border-radius: 2px; font-size: 0.84rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; transition: border-color 0.2s, color 0.2s; }
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+.hero-right { position: relative; display: flex; align-items: center; justify-content: center; padding: 4rem 4rem 4rem 2rem; z-index: 2; }
+.hero-graphic { width: 100%; max-width: 460px; position: relative; }
+.hero-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; padding: 2rem; }
+.hero-card-title { font-size: 0.67rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; font-weight: 500; }
+.service-tag { display: flex; align-items: center; gap: 0.75rem; padding: 0.72rem 0; border-bottom: 1px solid rgba(255,255,255,0.08); font-size: 0.88rem; color: rgba(255,255,255,0.8); font-weight: 300; }
+.service-tag:last-child { border-bottom: none; }
+.tag-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--teal-light); flex-shrink: 0; }
+.hero-badge { position: absolute; bottom: -1.5rem; right: 2rem; background: var(--accent); color: var(--navy); padding: 1rem 1.5rem; border-radius: 2px; text-align: center; }
+.hero-badge strong { display: block; font-size: 1.6rem; font-family: 'Playfair Display', serif; font-weight: 700; line-height: 1; }
+.hero-badge span { font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.8; font-weight: 500; }
+
+/* TRUST BAR */
+.trust-bar { background: var(--sand); padding: 1.35rem 4rem; display: flex; align-items: center; justify-content: center; gap: 3rem; flex-wrap: wrap; }
+.trust-item { display: flex; align-items: center; gap: 0.6rem; font-size: 0.71rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-mid); }
+.trust-check { width: 15px; height: 15px; border-radius: 50%; background: var(--teal); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.trust-check svg { width: 8px; height: 8px; }
+
+/* SECTION */
+section { padding: 6rem 4rem; }
+.section-label { font-size: 0.67rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.75rem; }
+.section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.85rem, 3vw, 2.6rem); font-weight: 700; line-height: 1.2; color: var(--navy); margin-bottom: 1.25rem; }
+.section-sub { font-size: 0.94rem; line-height: 1.8; color: var(--text-mid); max-width: 520px; font-weight: 300; }
+
+/* SERVICES */
+.services { background: var(--white); }
+.services-header { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; margin-bottom: 3.5rem; }
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5px; background: var(--sand-dark); border: 1.5px solid var(--sand-dark); }
+.service-card { background: var(--white); padding: 2.25rem 1.75rem; transition: background 0.25s; }
+.service-card:hover { background: var(--navy); }
+.service-card:hover .sc-icon-wrap { background: rgba(26,127,110,0.2); }
+.service-card:hover .sc-icon { stroke: var(--teal-light); }
+.service-card:hover .service-card-title { color: var(--white); }
+.service-card:hover .service-card-text { color: rgba(255,255,255,0.52); }
+.service-card:hover .service-card-list li { color: rgba(255,255,255,0.45); }
+.service-card:hover .service-card-list li::before { background: var(--teal-light); }
+.sc-icon-wrap { width: 42px; height: 42px; background: var(--sand); border-radius: 2px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.2rem; transition: background 0.25s; }
+.sc-icon { width: 20px; height: 20px; stroke: var(--teal); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; transition: stroke 0.25s; }
+.service-card-title { font-family: 'Playfair Display', serif; font-size: 1.08rem; font-weight: 700; color: var(--navy); margin-bottom: 0.6rem; transition: color 0.25s; }
+.service-card-text { font-size: 0.82rem; line-height: 1.7; color: var(--text-mid); margin-bottom: 0.9rem; transition: color 0.25s; font-weight: 300; }
+.service-card-list { list-style: none; display: flex; flex-direction: column; gap: 0.28rem; }
+.service-card-list li { font-size: 0.75rem; color: var(--text-light); display: flex; align-items: center; gap: 0.5rem; transition: color 0.25s; }
+.service-card-list li::before { content: ''; display: block; width: 3px; height: 3px; border-radius: 50%; background: var(--teal); flex-shrink: 0; transition: background 0.25s; }
+
+/* WHY */
+.why { background: var(--navy); display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+.why .section-title { color: var(--white); }
+.why .section-label { color: var(--accent); }
+.why .section-sub { color: rgba(255,255,255,0.52); }
+.why-points { display: flex; flex-direction: column; gap: 1.75rem; margin-top: 2rem; }
+.why-point { display: flex; gap: 1.25rem; align-items: flex-start; }
+.why-num { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: var(--teal); line-height: 1; flex-shrink: 0; width: 2.5rem; }
+.why-point-title { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.05em; color: var(--white); margin-bottom: 0.2rem; text-transform: uppercase; }
+.why-point-text { font-size: 0.82rem; line-height: 1.7; color: rgba(255,255,255,0.48); font-weight: 300; }
+.why-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5px; background: rgba(255,255,255,0.06); }
+.stat-box { background: var(--navy-mid); padding: 2.5rem 2rem; text-align: center; }
+.stat-num { font-family: 'Playfair Display', serif; font-size: 2.7rem; font-weight: 700; color: var(--white); line-height: 1; margin-bottom: 0.5rem; }
+.stat-num span { color: var(--teal-light); }
+.stat-label { font-size: 0.67rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.38); font-weight: 500; }
+
+/* AREAS */
+.areas { background: var(--sand); }
+.areas-inner { display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; align-items: start; }
+.areas-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.55rem; margin-top: 1rem; }
+.area-pill { background: var(--white); border: 1px solid var(--sand-dark); padding: 0.62rem 0.7rem; border-radius: 2px; font-size: 0.74rem; font-weight: 500; color: var(--text-mid); text-align: center; }
+
+/* BLOG */
+.blog { background: var(--white); }
+.blog-header { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: end; margin-bottom: 3rem; }
+.blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.blog-card { border: 1px solid var(--sand-dark); border-radius: 2px; overflow: hidden; transition: border-color 0.2s, transform 0.2s; }
+.blog-card:hover { border-color: var(--teal); transform: translateY(-3px); }
+.blog-card-img { height: 155px; position: relative; overflow: hidden; }
+.blog-card-cat { position: absolute; top: 1rem; left: 1rem; background: var(--teal); color: var(--white); font-size: 0.6rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; padding: 0.28rem 0.65rem; border-radius: 2px; }
+.blog-card-body { padding: 1.2rem; }
+.blog-card-date { font-size: 0.66rem; color: var(--text-light); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.45rem; }
+.blog-card-title { font-family: 'Playfair Display', serif; font-size: 0.98rem; font-weight: 700; color: var(--navy); line-height: 1.35; margin-bottom: 0.6rem; }
+.blog-card-text { font-size: 0.78rem; line-height: 1.65; color: var(--text-mid); font-weight: 300; }
+
+/* CONTACT */
+.contact { background: var(--sand); display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+.contact-form { display: flex; flex-direction: column; gap: 1rem; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form-group { display: flex; flex-direction: column; gap: 0.38rem; }
+label { font-size: 0.67rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-mid); }
+input, select, textarea { border: 1px solid var(--sand-dark); border-radius: 2px; padding: 0.72rem 0.9rem; font-family: 'DM Sans', sans-serif; font-size: 0.87rem; font-weight: 300; color: var(--text-dark); background: var(--white); outline: none; transition: border-color 0.2s; width: 100%; }
+input:focus, select:focus, textarea:focus { border-color: var(--teal); }
+textarea { resize: vertical; min-height: 100px; }
+.contact-info { display: flex; flex-direction: column; gap: 1.75rem; }
+.contact-detail { display: flex; gap: 1rem; align-items: flex-start; }
+.contact-detail-icon { width: 38px; height: 38px; background: var(--white); border: 1px solid var(--sand-dark); border-radius: 2px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.contact-detail-icon svg { width: 17px; height: 17px; stroke: var(--teal); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.contact-detail-label { font-size: 0.64rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-light); margin-bottom: 0.2rem; }
+.contact-detail-value { font-size: 0.92rem; font-weight: 500; color: var(--navy); }
+.wa-btn { display: inline-flex; align-items: center; gap: 0.6rem; background: #25D366; color: white; padding: 0.82rem 1.5rem; border-radius: 2px; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.06em; text-decoration: none; margin-top: 0.25rem; transition: opacity 0.2s; width: fit-content; }
+.wa-btn:hover { opacity: 0.88; }
+
+/* FOOTER */
+.footer-main { background: var(--navy); padding: 4rem 4rem 2rem; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+.footer-brand-logo { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--white); margin-bottom: 0.75rem; }
+.footer-brand-logo span { color: var(--accent); }
+.footer-brand-desc { font-size: 0.8rem; line-height: 1.7; color: rgba(255,255,255,0.38); font-weight: 300; max-width: 260px; margin-bottom: 1.2rem; }
+.footer-col-title { font-size: 0.64rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.2rem; }
+.footer-col-links { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+.footer-col-links a { font-size: 0.78rem; color: rgba(255,255,255,0.42); text-decoration: none; transition: color 0.2s; font-weight: 300; }
+.footer-col-links a:hover { color: var(--accent); }
+.footer-partners { display: flex; gap: 0.65rem; flex-wrap: wrap; margin-top: 0.25rem; }
+.partner-badge { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); padding: 0.4rem 0.8rem; border-radius: 2px; font-size: 0.68rem; color: rgba(255,255,255,0.38); letter-spacing: 0.07em; }
+.footer-divider { border: none; border-top: 1px solid rgba(255,255,255,0.07); margin-bottom: 1.5rem; }
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+.footer-bottom-copy { font-size: 0.7rem; color: rgba(255,255,255,0.22); letter-spacing: 0.04em; }
+.footer-bottom-links { display: flex; gap: 1.5rem; list-style: none; }
+.footer-bottom-links a { font-size: 0.7rem; color: rgba(255,255,255,0.32); text-decoration: none; transition: color 0.2s; letter-spacing: 0.05em; }
+.footer-bottom-links a:hover { color: var(--accent); }
+
+/* MODAL */
+.modal-overlay { display: none; position: fixed; inset: 0; background: rgba(11,31,58,0.78); z-index: 500; align-items: center; justify-content: center; padding: 2rem; }
+.modal-overlay.open { display: flex; }
+.modal-box { background: var(--white); border-radius: 4px; max-width: 700px; width: 100%; max-height: 84vh; overflow-y: auto; position: relative; }
+.modal-header { background: var(--navy); padding: 1.75rem 2.25rem 1.5rem; position: sticky; top: 0; z-index: 2; }
+.modal-header h2 { font-family: 'Playfair Display', serif; font-size: 1.45rem; color: var(--white); font-weight: 700; margin-bottom: 0.2rem; }
+.modal-header p { font-size: 0.72rem; color: rgba(255,255,255,0.42); letter-spacing: 0.06em; }
+.modal-close { position: absolute; top: 1.1rem; right: 1.4rem; background: none; border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.65); font-size: 1rem; width: 30px; height: 30px; border-radius: 2px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s; font-family: inherit; line-height: 1; }
+.modal-close:hover { background: rgba(255,255,255,0.1); }
+.modal-body { padding: 1.75rem 2.25rem 2.25rem; }
+.modal-body h3 { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--navy); margin: 1.6rem 0 0.5rem; font-weight: 700; }
+.modal-body h3:first-child { margin-top: 0; }
+.modal-body p { font-size: 0.83rem; line-height: 1.75; color: var(--text-mid); font-weight: 300; margin-bottom: 0.4rem; }
+.modal-body ul { padding-left: 1.2rem; margin-bottom: 0.4rem; }
+.modal-body ul li { font-size: 0.82rem; line-height: 1.7; color: var(--text-mid); font-weight: 300; margin-bottom: 0.22rem; }
+
+/* ANIMATIONS */
+.fade-up { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+
+/* RESPONSIVE */
+@media (max-width: 960px) {
+  .nav-top { padding: 0.8rem 1.5rem; }
+  .nav-bottom { padding: 0 0.25rem; overflow-x: auto; justify-content: flex-start; }
+  .nav-bottom a { padding: 0.6rem 0.9rem; font-size: 0.62rem; }
+  .nav-contact-strip { display: none; }
+  section { padding: 4rem 1.5rem; }
+  .hero { grid-template-columns: 1fr; padding-top: 98px; }
+  .hero-left { padding: 3rem 1.5rem 2rem; }
+  .hero-right { padding: 2rem 1.5rem 4rem; }
+  .services-header, .blog-header { grid-template-columns: 1fr; gap: 1rem; }
+  .services-grid, .blog-grid { grid-template-columns: 1fr; }
+  .why { grid-template-columns: 1fr; padding: 4rem 1.5rem; }
+  .why-stats { grid-template-columns: 1fr 1fr; }
+  .areas-inner { grid-template-columns: 1fr; }
+  .areas-grid { grid-template-columns: repeat(2,1fr); }
+  .contact { grid-template-columns: 1fr; padding: 4rem 1.5rem; }
+  .form-row { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .footer-main { padding: 3rem 1.5rem 1.5rem; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+  .trust-bar { padding: 1rem 1.5rem; gap: 1rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-top">
+    <a href="#" class="nav-logo">Khusela <span>Commercial Cleaning Co.</span></a>
+    <div class="nav-contact-strip">
+      <a href="tel:0725341522">072 534 1522</a>
+      <a href="https://wa.me/27725341522">WhatsApp Us</a>
+    </div>
+    <a href="#contact" class="nav-cta-top">Get a Free Quote</a>
+  </div>
+  <div class="nav-bottom">
+    <a href="#services">Services</a>
+    <a href="#why">Why Us</a>
+    <a href="#areas">Areas We Cover</a>
+    <a href="#blog">Blog</a>
+    <a href="#contact">Contact Us</a>
+    <a href="tel:0725341522">072 534 1522</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-left fade-up">
+    <p class="hero-eyebrow">Cape Town Commercial Cleaning Specialists</p>
+    <h1>We keep your<br>space <em>spotless</em><br>always.</h1>
+    <p class="hero-sub">Professional commercial, Airbnb, carpet and furniture cleaning across Cape Town. Trusted by businesses and properties who demand a higher standard.</p>
+    <div class="hero-actions">
+      <a href="https://wa.me/27725341522" class="btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.004 2.003C6.476 2.003 2 6.479 2 12.007c0 1.916.51 3.71 1.395 5.253L2 22l4.887-1.379A9.969 9.969 0 0012.004 22C17.532 22 22 17.524 22 11.996c0-2.671-1.04-5.18-2.929-7.069A9.952 9.952 0 0012.004 2.003z"/></svg>
+        WhatsApp Us
+      </a>
+      <a href="#services" class="btn-ghost">View Services</a>
+    </div>
+  </div>
+  <div class="hero-right fade-up" style="transition-delay:0.2s">
+    <div class="hero-graphic">
+      <div class="hero-card">
+        <p class="hero-card-title">Our Services</p>
+        <div class="service-tag"><span class="tag-dot"></span>Commercial and Office Cleaning</div>
+        <div class="service-tag"><span class="tag-dot"></span>Airbnb and Short-Term Rentals</div>
+        <div class="service-tag"><span class="tag-dot"></span>Carpet Deep Cleaning</div>
+        <div class="service-tag"><span class="tag-dot"></span>Furniture and Upholstery Washing</div>
+        <div class="service-tag"><span class="tag-dot"></span>Headboard and Couch Restoration</div>
+        <div class="service-tag" style="border-bottom:none"><span class="tag-dot"></span>Once-Off and Contract Cleaning</div>
+      </div>
+      <div class="hero-badge">
+        <strong>100%</strong>
+        <span>Satisfaction<br>Guarantee</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item"><div class="trust-check"><svg viewBox="0 0 10 10" fill="none"><polyline points="2,5 4,7 8,3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Serving All of Cape Town</div>
+  <div class="trust-item"><div class="trust-check"><svg viewBox="0 0 10 10" fill="none"><polyline points="2,5 4,7 8,3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Professional and Vetted Staff</div>
+  <div class="trust-item"><div class="trust-check"><svg viewBox="0 0 10 10" fill="none"><polyline points="2,5 4,7 8,3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Flexible Scheduling</div>
+  <div class="trust-item"><div class="trust-check"><svg viewBox="0 0 10 10" fill="none"><polyline points="2,5 4,7 8,3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Free Quotes</div>
+  <div class="trust-item"><div class="trust-check"><svg viewBox="0 0 10 10" fill="none"><polyline points="2,5 4,7 8,3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Same-Day Response</div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-header">
+    <div>
+      <p class="section-label">What We Do</p>
+      <h2 class="section-title">Cleaning solutions for every space</h2>
+    </div>
+    <p class="section-sub">From corporate offices to Airbnb turnovers and deep upholstery restoration, we bring professional results every time.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card fade-up">
+      <div class="sc-icon-wrap"><svg class="sc-icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M9 21V9"/></svg></div>
+      <h3 class="service-card-title">Commercial Cleaning</h3>
+      <p class="service-card-text">Regular contract or once-off deep cleans for offices, retail spaces, warehouses and corporate environments.</p>
+      <ul class="service-card-list"><li>Office buildings and boardrooms</li><li>Retail and showroom spaces</li><li>Warehouses and facilities</li><li>Post-construction cleans</li></ul>
+    </div>
+    <div class="service-card fade-up" style="transition-delay:0.08s">
+      <div class="sc-icon-wrap"><svg class="sc-icon" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg></div>
+      <h3 class="service-card-title">Airbnb and Rental Cleaning</h3>
+      <p class="service-card-text">Fast, thorough turnovers that meet guest expectations every check-in. We work around your booking calendar.</p>
+      <ul class="service-card-list"><li>Guest-ready turnovers</li><li>Linen change and bed making</li><li>Kitchen and bathroom sanitising</li><li>Same-day availability</li></ul>
+    </div>
+    <div class="service-card fade-up" style="transition-delay:0.16s">
+      <div class="sc-icon-wrap"><svg class="sc-icon" viewBox="0 0 24 24"><path d="M3 17h18M5 17V7a2 2 0 012-2h10a2 2 0 012 2v10"/><path d="M8 17v2M16 17v2"/></svg></div>
+      <h3 class="service-card-title">Carpet Cleaning</h3>
+      <p class="service-card-text">Hot water extraction and deep shampooing for homes, offices and commercial spaces. Stains, odours and allergens removed.</p>
+      <ul class="service-card-list"><li>Residential and commercial carpets</li><li>Stain and odour treatment</li><li>Area rugs and runners</li><li>Quick-dry process</li></ul>
+    </div>
+    <div class="service-card fade-up" style="transition-delay:0.24s">
+      <div class="sc-icon-wrap"><svg class="sc-icon" viewBox="0 0 24 24"><path d="M20 9V7a2 2 0 00-2-2H6a2 2 0 00-2 2v2"/><path d="M2 11h20v6H2z"/><path d="M4 17v2M20 17v2"/></svg></div>
+      <h3 class="service-card-title">Upholstery and Furniture</h3>
+      <p class="service-card-text">Restore your couches, chairs and soft furnishings to like-new condition using professional-grade products.</p>
+      <ul class="service-card-list"><li>Sofas and couches</li><li>Dining and lounge chairs</li><li>Headboards and ottomans</li><li>Leather and fabric treatment</li></ul>
+    </div>
+    <div class="service-card fade-up" style="transition-delay:0.3s">
+      <div class="sc-icon-wrap"><svg class="sc-icon" viewBox="0 0 24 24"><rect x="2" y="9" width="20" height="11" rx="2"/><path d="M7 9V7a5 5 0 0110 0v2"/></svg></div>
+      <h3 class="service-card-title">Headboard Washing</h3>
+      <p class="service-card-text">Specialised cleaning for headboards in homes, hotels and guesthouses. Fabric, upholstered or padded.</p>
+      <ul class="service-card-list"><li>Fabric and upholstered headboards</li><li>Hotels and guesthouses</li><li>Stain extraction</li><li>Deodorising treatment</li></ul>
+    </div>
+    <div class="service-card fade-up" style="transition-delay:0.36s">
+      <div class="sc-icon-wrap"><svg class="sc-icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+      <h3 class="service-card-title">Contract Cleaning</h3>
+      <p class="service-card-text">Ongoing daily, weekly or monthly commercial cleaning contracts. Dedicated teams, consistent results, no surprises.</p>
+      <ul class="service-card-list"><li>Daily and weekly contracts</li><li>Dedicated cleaning teams</li><li>Customised service plans</li><li>SLA-backed reliability</li></ul>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why" id="why">
+  <div>
+    <p class="section-label">Why Khusela</p>
+    <h2 class="section-title">A standard you can trust</h2>
+    <p class="section-sub">We built Khusela on one belief: every space deserves to be treated with care. That shapes everything we do.</p>
+    <div class="why-points">
+      <div class="why-point fade-up"><span class="why-num">01</span><div><p class="why-point-title">Vetted, Professional Staff</p><p class="why-point-text">Every team member is trained, background-checked and uniformed. You know exactly who is in your space.</p></div></div>
+      <div class="why-point fade-up" style="transition-delay:0.1s"><span class="why-num">02</span><div><p class="why-point-title">Flexible and Reliable</p><p class="why-point-text">We work around your schedule. Early mornings, evenings and weekends available. No disruption to your business.</p></div></div>
+      <div class="why-point fade-up" style="transition-delay:0.2s"><span class="why-num">03</span><div><p class="why-point-title">Fully Insured</p><p class="why-point-text">We carry public liability insurance so you are fully protected. Your property is in safe hands.</p></div></div>
+      <div class="why-point fade-up" style="transition-delay:0.3s"><span class="why-num">04</span><div><p class="why-point-title">Same-Day Quotes</p><p class="why-point-text">WhatsApp or call us and get a quote within hours. No lengthy process, no hidden fees.</p></div></div>
+    </div>
+  </div>
+  <div>
+    <div class="why-stats">
+      <div class="stat-box"><p class="stat-num">Cape<span>Town</span></p><p class="stat-label">City-Wide Coverage</p></div>
+      <div class="stat-box"><p class="stat-num">24<span>h</span></p><p class="stat-label">Response Time</p></div>
+      <div class="stat-box"><p class="stat-num">100<span>%</span></p><p class="stat-label">Satisfaction Guaranteed</p></div>
+      <div class="stat-box"><p class="stat-num">6<span>+</span></p><p class="stat-label">Service Categories</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- AREAS -->
+<section class="areas" id="areas">
+  <div class="areas-inner">
+    <div>
+      <p class="section-label">Coverage</p>
+      <h2 class="section-title">We clean across all of Cape Town</h2>
+      <p class="section-sub">From the City Bowl to the Northern Suburbs and everywhere in between. One call covers it all.</p>
+    </div>
+    <div>
+      <div class="areas-grid">
+        <div class="area-pill">City Bowl</div><div class="area-pill">Atlantic Seaboard</div><div class="area-pill">Sea Point</div>
+        <div class="area-pill">Green Point</div><div class="area-pill">V&amp;A Waterfront</div><div class="area-pill">Southern Suburbs</div>
+        <div class="area-pill">Claremont</div><div class="area-pill">Constantia</div><div class="area-pill">Hout Bay</div>
+        <div class="area-pill">Bellville</div><div class="area-pill">Tygervalley</div><div class="area-pill">Milnerton</div>
+        <div class="area-pill">Blouberg</div><div class="area-pill">Somerset West</div><div class="area-pill">Stellenbosch</div>
+      </div>
+      <p style="font-size:0.74rem; color:var(--text-light); margin-top:0.9rem;">Don't see your area? Contact us and we will likely cover it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section class="blog" id="blog">
+  <div class="blog-header">
+    <div>
+      <p class="section-label">Insights and Tips</p>
+      <h2 class="section-title">The Khusela Blog</h2>
+    </div>
+    <p class="section-sub">Cleaning advice, business tips and industry know-how to help you maintain a pristine space all year round.</p>
+  </div>
+  <div class="blog-grid">
+    <div class="blog-card fade-up">
+      <div class="blog-card-img" style="background:var(--navy-mid);">
+        <svg style="position:absolute;top:0;left:0;width:100%;height:100%;opacity:0.12;" viewBox="0 0 300 155"><line x1="0" y1="38" x2="300" y2="38" stroke="white" stroke-width="0.5"/><line x1="0" y1="77" x2="300" y2="77" stroke="white" stroke-width="0.5"/><line x1="0" y1="116" x2="300" y2="116" stroke="white" stroke-width="0.5"/><line x1="75" y1="0" x2="75" y2="155" stroke="white" stroke-width="0.5"/><line x1="150" y1="0" x2="150" y2="155" stroke="white" stroke-width="0.5"/><line x1="225" y1="0" x2="225" y2="155" stroke="white" stroke-width="0.5"/></svg>
+        <span class="blog-card-cat">Commercial</span>
+      </div>
+      <div class="blog-card-body">
+        <p class="blog-card-date">March 2025</p>
+        <h3 class="blog-card-title">Why Regular Office Cleaning Boosts Staff Productivity</h3>
+        <p class="blog-card-text">A clean workspace does more than look good. Research shows it directly impacts employee focus, morale and absenteeism.</p>
+      </div>
+    </div>
+    <div class="blog-card fade-up" style="transition-delay:0.1s">
+      <div class="blog-card-img" style="background:#0F3D34;">
+        <svg style="position:absolute;top:0;left:0;width:100%;height:100%;opacity:0.12;" viewBox="0 0 300 155"><circle cx="150" cy="77" r="60" stroke="white" stroke-width="0.5" fill="none"/><circle cx="150" cy="77" r="40" stroke="white" stroke-width="0.5" fill="none"/><circle cx="150" cy="77" r="20" stroke="white" stroke-width="0.5" fill="none"/></svg>
+        <span class="blog-card-cat">Airbnb Tips</span>
+      </div>
+      <div class="blog-card-body">
+        <p class="blog-card-date">February 2025</p>
+        <h3 class="blog-card-title">The Airbnb Host Cleaning Checklist for 5-Star Reviews</h3>
+        <p class="blog-card-text">Guests notice everything. Here is the exact turnover process that helps Cape Town hosts maintain top ratings consistently.</p>
+      </div>
+    </div>
+    <div class="blog-card fade-up" style="transition-delay:0.2s">
+      <div class="blog-card-img" style="background:#2D1B0E;">
+        <svg style="position:absolute;top:0;left:0;width:100%;height:100%;opacity:0.12;" viewBox="0 0 300 155"><rect x="20" y="20" width="260" height="115" rx="4" stroke="white" stroke-width="0.5" fill="none"/><rect x="40" y="38" width="220" height="79" rx="2" stroke="white" stroke-width="0.5" fill="none"/><rect x="60" y="57" width="180" height="40" rx="1" stroke="white" stroke-width="0.5" fill="none"/></svg>
+        <span class="blog-card-cat">Upholstery</span>
+      </div>
+      <div class="blog-card-body">
+        <p class="blog-card-date">January 2025</p>
+        <h3 class="blog-card-title">How Often Should You Professionally Clean Your Couch?</h3>
+        <p class="blog-card-text">Most people wait too long. We break down the ideal cleaning schedule for different fabric types and household sizes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-info">
+    <div>
+      <p class="section-label">Get In Touch</p>
+      <h2 class="section-title">Request a free quote</h2>
+      <p class="section-sub">Tell us about your space and we will get back to you within 24 hours with a tailored quote. No obligation.</p>
+    </div>
+    <div class="contact-detail">
+      <div class="contact-detail-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.4 11.5 19.79 19.79 0 01.34 2.87 2 2 0 012.33 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></div>
+      <div><p class="contact-detail-label">Phone and WhatsApp</p><p class="contact-detail-value">072 534 1522</p></div>
+    </div>
+    <div class="contact-detail">
+      <div class="contact-detail-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+      <div><p class="contact-detail-label">Based In</p><p class="contact-detail-value">Cape Town, Western Cape</p></div>
+    </div>
+    <a href="https://wa.me/27725341522" class="wa-btn">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.004 2.003C6.476 2.003 2 6.479 2 12.007c0 1.916.51 3.71 1.395 5.253L2 22l4.887-1.379A9.969 9.969 0 0012.004 22C17.532 22 22 17.524 22 11.996c0-2.671-1.04-5.18-2.929-7.069A9.952 9.952 0 0012.004 2.003z"/></svg>
+      Chat on WhatsApp
+    </a>
+  </div>
+  <div class="contact-form">
+    <div class="form-row">
+      <div class="form-group"><label for="fname">Your Name</label><input type="text" id="fname" placeholder="Jane Smith"></div>
+      <div class="form-group"><label for="fphone">Phone Number</label><input type="tel" id="fphone" placeholder="+27 ..."></div>
+    </div>
+    <div class="form-group">
+      <label for="fservice">Service Required</label>
+      <select id="fservice">
+        <option value="">Select a service...</option>
+        <option>Commercial and Office Cleaning</option>
+        <option>Airbnb and Short-Term Rental Cleaning</option>
+        <option>Carpet Cleaning</option>
+        <option>Upholstery and Furniture Washing</option>
+        <option>Headboard Cleaning</option>
+        <option>Contract Cleaning</option>
+        <option>Multiple Services</option>
+      </select>
+    </div>
+    <div class="form-group"><label for="farea">Area in Cape Town</label><input type="text" id="farea" placeholder="e.g. Sea Point, Claremont..."></div>
+    <div class="form-group"><label for="fmessage">Tell us about your space</label><textarea id="fmessage" placeholder="Size of space, frequency needed, any specific requirements..."></textarea></div>
+    <button onclick="handleSubmit()" class="btn-primary">Send Quote Request</button>
+    <p style="font-size:0.7rem; color:var(--text-light); margin-top:0.4rem;">By submitting this form you agree to our <a href="#" onclick="openModal('tcs'); return false;" style="color:var(--teal); text-decoration:none;">Terms and Conditions</a>.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer-main">
+  <div class="footer-grid">
+    <div>
+      <p class="footer-brand-logo">Khusela <span>Commercial Cleaning Co.</span></p>
+      <p class="footer-brand-desc">Professional commercial and residential cleaning services across Cape Town. Protecting your space, every time.</p>
+      <a href="tel:0725341522" style="font-size:0.8rem; color:var(--teal-light); text-decoration:none; font-weight:400; letter-spacing:0.05em;">072 534 1522</a>
+    </div>
+    <div>
+      <p class="footer-col-title">Services</p>
+      <ul class="footer-col-links">
+        <li><a href="#services">Commercial Cleaning</a></li>
+        <li><a href="#services">Airbnb Cleaning</a></li>
+        <li><a href="#services">Carpet Cleaning</a></li>
+        <li><a href="#services">Upholstery Washing</a></li>
+        <li><a href="#services">Headboard Cleaning</a></li>
+        <li><a href="#services">Contract Cleaning</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-title">Company</p>
+      <ul class="footer-col-links">
+        <li><a href="#why">Why Khusela</a></li>
+        <li><a href="#areas">Areas We Cover</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="#" onclick="openModal('tcs'); return false;">Terms and Conditions</a></li>
+        <li><a href="#" onclick="openModal('privacy'); return false;">Privacy Policy</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="footer-col-title">Our Partners</p>
+      <div class="footer-partners">
+        <div class="partner-badge">Cleanipedia</div>
+        <div class="partner-badge">Unilever Pro</div>
+        <div class="partner-badge">Jeyes SA</div>
+        <div class="partner-badge">Bidvest</div>
+      </div>
+      <p class="footer-col-title" style="margin-top:1.6rem;">Associations</p>
+      <div class="footer-partners">
+        <div class="partner-badge">NCCA</div>
+        <div class="partner-badge">SAPCA</div>
+      </div>
+    </div>
+  </div>
+  <hr class="footer-divider">
+  <div class="footer-bottom">
+    <p class="footer-bottom-copy">2026 Khusela Commercial Cleaning Co. Cape Town, South Africa. All rights reserved.</p>
+    <ul class="footer-bottom-links">
+      <li><a href="#" onclick="openModal('tcs'); return false;">Terms and Conditions</a></li>
+      <li><a href="#" onclick="openModal('privacy'); return false;">Privacy Policy</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</footer>
+
+<!-- T&CS MODAL -->
+<div class="modal-overlay" id="modal-tcs">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h2>Terms and Conditions</h2>
+      <p>Last updated: March 2026</p>
+      <button class="modal-close" onclick="closeModal('tcs')">x</button>
+    </div>
+    <div class="modal-body">
+      <h3>1. Introduction</h3>
+      <p>These Terms and Conditions govern the provision of cleaning services by Khusela Commercial Cleaning Co. ("Khusela", "we", "us") to clients ("you", "the client"). By booking our services or submitting an enquiry you agree to be bound by these terms.</p>
+      <h3>2. Services</h3>
+      <p>Khusela provides commercial cleaning, Airbnb turnover cleaning, carpet cleaning, upholstery washing, headboard cleaning and contract cleaning services across the Cape Town metropolitan area. The specific scope of work will be confirmed in a written quotation prior to commencement.</p>
+      <h3>3. Quotations and Pricing</h3>
+      <p>All quotations are valid for 14 days from the date of issue. Quotations are based on information provided by the client and are subject to change if the actual scope of work differs materially on arrival. We reserve the right to adjust pricing if access is restricted or conditions are materially different from those described.</p>
+      <h3>4. Booking and Confirmation</h3>
+      <p>A booking is confirmed once Khusela has provided written confirmation via WhatsApp or email. For once-off jobs, confirmation must be received at least 24 hours before the scheduled appointment. For contract cleaning arrangements, terms will be set out in a separate service agreement.</p>
+      <h3>5. Access and Site Preparation</h3>
+      <p>The client is responsible for ensuring that our team has safe and unobstructed access to the premises at the agreed time. Any delays caused by restricted access may result in additional charges or rescheduling. The client should secure or remove valuables and fragile items prior to our arrival.</p>
+      <h3>6. Payment Terms</h3>
+      <ul>
+        <li>Once-off services: payment is due on completion of the job unless otherwise agreed in writing.</li>
+        <li>Contract clients: invoices are issued monthly in advance and are payable within 7 days of invoice date.</li>
+        <li>Khusela accepts EFT, cash and payment via agreed digital platforms.</li>
+        <li>Late payments may attract interest at the prime lending rate plus 2% per annum.</li>
+      </ul>
+      <h3>7. Cancellations and Rescheduling</h3>
+      <p>Cancellations made less than 24 hours before a scheduled appointment may incur a cancellation fee of up to 50% of the quoted amount. Rescheduling with more than 24 hours notice is free of charge and subject to availability.</p>
+      <h3>8. Satisfaction Guarantee and Complaints</h3>
+      <p>If you are not satisfied with the outcome of a job, you must notify us within 24 hours of completion. We will return to re-clean the specific area of concern at no additional charge. Our guarantee does not apply to pre-existing damage or staining that was disclosed prior to the clean or that could not reasonably be removed with professional cleaning methods.</p>
+      <h3>9. Damage and Liability</h3>
+      <p>Khusela holds public liability insurance. Any claim for damage must be reported in writing within 24 hours of the service. We will not be liable for damage to items that were fragile, unsecured or in a pre-existing damaged condition. Our maximum liability is limited to the value of the service rendered.</p>
+      <h3>10. Client Obligations</h3>
+      <ul>
+        <li>Provide accurate information about the premises and the scope of work required.</li>
+        <li>Ensure a safe working environment for our team, including functioning water and electricity.</li>
+        <li>Notify us of any hazardous materials, pets or security requirements on the premises.</li>
+        <li>Not engage or solicit Khusela employees directly for a period of 12 months after the conclusion of services.</li>
+      </ul>
+      <h3>11. Health, Safety and Environment</h3>
+      <p>Khusela uses industry-standard cleaning products and methods. If you have specific requirements regarding cleaning product types or allergens, please advise us in advance.</p>
+      <h3>12. Confidentiality</h3>
+      <p>We treat all information about your premises and business as strictly confidential. Our staff are contractually obligated to maintain confidentiality at all times.</p>
+      <h3>13. Governing Law</h3>
+      <p>These terms are governed by the laws of the Republic of South Africa. Any disputes arising will be subject to the jurisdiction of the courts of the Western Cape.</p>
+      <h3>14. Amendments</h3>
+      <p>Khusela reserves the right to update these terms at any time. The most current version will always be available on our website. Continued use of our services constitutes acceptance of the updated terms.</p>
+      <h3>Contact</h3>
+      <p>For any queries regarding these terms, please contact us on 072 534 1522 or via WhatsApp.</p>
+    </div>
+  </div>
+</div>
+
+<!-- PRIVACY MODAL -->
+<div class="modal-overlay" id="modal-privacy">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h2>Privacy Policy</h2>
+      <p>Last updated: March 2026</p>
+      <button class="modal-close" onclick="closeModal('privacy')">x</button>
+    </div>
+    <div class="modal-body">
+      <h3>1. Information We Collect</h3>
+      <p>When you contact us or request a quote we may collect your name, phone number, email address and information about your property. This information is used solely to provide and improve our services.</p>
+      <h3>2. How We Use Your Information</h3>
+      <ul>
+        <li>To respond to your enquiry and provide a quote.</li>
+        <li>To schedule and confirm cleaning appointments.</li>
+        <li>To follow up on completed services.</li>
+        <li>To send relevant updates about our services where you have opted in.</li>
+      </ul>
+      <h3>3. Sharing of Information</h3>
+      <p>We do not sell, rent or share your personal information with third parties, except where required by law or where necessary to deliver our services.</p>
+      <h3>4. Data Security</h3>
+      <p>We take reasonable steps to protect your information. WhatsApp communications are end-to-end encrypted. We do not store sensitive payment information.</p>
+      <h3>5. Your Rights (POPIA)</h3>
+      <p>In accordance with the Protection of Personal Information Act (POPIA), you have the right to access, correct or request deletion of your personal information at any time. Please contact us at 072 534 1522 to exercise these rights.</p>
+      <h3>6. Contact</h3>
+      <p>For privacy-related queries please contact us on 072 534 1522.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const href = a.getAttribute('href');
+    if (href === '#') return;
+    const target = document.querySelector(href);
+    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  });
+});
+
+function openModal(id) {
+  document.getElementById('modal-' + id).classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal(id) {
+  document.getElementById('modal-' + id).classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.querySelectorAll('.modal-overlay').forEach(overlay => {
+  overlay.addEventListener('click', function(e) {
+    if (e.target === overlay) { overlay.classList.remove('open'); document.body.style.overflow = ''; }
+  });
+});
+
+function handleSubmit() {
+  const name = document.getElementById('fname').value;
+  const phone = document.getElementById('fphone').value;
+  const service = document.getElementById('fservice').value;
+  const area = document.getElementById('farea').value;
+  const message = document.getElementById('fmessage').value;
+  if (!name || !phone || !service) { alert('Please fill in your name, phone number and select a service.'); return; }
+  const text = encodeURIComponent('Hi Khusela Cleaning! I would like a quote.\n\nName: ' + name + '\nPhone: ' + phone + '\nService: ' + service + '\nArea: ' + area + '\nDetails: ' + message);
+  window.open('https://wa.me/27725341522?text=' + text, '_blank');
+}
+</script>
+</body>
+</html>
