@@ -437,27 +437,31 @@ textarea { resize: vertical; min-height: 100px; }
     </a>
   </div>
   <div class="contact-form">
-    <div class="form-row">
-      <div class="form-group"><label for="fname">Your Name</label><input type="text" id="fname" placeholder="Jane Smith"></div>
-      <div class="form-group"><label for="fphone">Phone Number</label><input type="tel" id="fphone" placeholder="+27 ..."></div>
-    </div>
-    <div class="form-group">
-      <label for="fservice">Service Required</label>
-      <select id="fservice">
-        <option value="">Select a service...</option>
-        <option>Commercial and Office Cleaning</option>
-        <option>Airbnb and Short-Term Rental Cleaning</option>
-        <option>Carpet Cleaning</option>
-        <option>Upholstery and Furniture Washing</option>
-        <option>Headboard Cleaning</option>
-        <option>Contract Cleaning</option>
-        <option>Multiple Services</option>
-      </select>
-    </div>
-    <div class="form-group"><label for="farea">Area in Cape Town</label><input type="text" id="farea" placeholder="e.g. Sea Point, Claremont..."></div>
-    <div class="form-group"><label for="fmessage">Tell us about your space</label><textarea id="fmessage" placeholder="Size of space, frequency needed, any specific requirements..."></textarea></div>
-    <button onclick="handleSubmit()" class="btn-primary">Send Quote Request</button>
-    <p style="font-size:0.7rem; color:var(--text-light); margin-top:0.4rem;">By submitting this form you agree to our <a href="#" onclick="openModal('tcs'); return false;" style="color:var(--teal); text-decoration:none;">Terms and Conditions</a>.</p>
+    <form name="quote-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/success">
+      <input type="hidden" name="form-name" value="quote-request">
+      <p style="display:none;"><label>Do not fill this in: <input name="bot-field"></label></p>
+      <div class="form-row">
+        <div class="form-group"><label for="fname">Your Name</label><input type="text" id="fname" name="name" placeholder="Jane Smith" required></div>
+        <div class="form-group"><label for="fphone">Phone Number</label><input type="tel" id="fphone" name="phone" placeholder="+27 ..." required></div>
+      </div>
+      <div class="form-group">
+        <label for="fservice">Service Required</label>
+        <select id="fservice" name="service" required>
+          <option value="">Select a service...</option>
+          <option>Commercial and Office Cleaning</option>
+          <option>Airbnb and Short-Term Rental Cleaning</option>
+          <option>Carpet Cleaning</option>
+          <option>Upholstery and Furniture Washing</option>
+          <option>Headboard Cleaning</option>
+          <option>Contract Cleaning</option>
+          <option>Multiple Services</option>
+        </select>
+      </div>
+      <div class="form-group"><label for="farea">Area in Cape Town</label><input type="text" id="farea" name="area" placeholder="e.g. Sea Point, Claremont..."></div>
+      <div class="form-group"><label for="fmessage">Tell us about your space</label><textarea id="fmessage" name="message" placeholder="Size of space, frequency needed, any specific requirements..."></textarea></div>
+      <button type="submit" class="btn-primary">Send Quote Request</button>
+      <p style="font-size:0.7rem; color:var(--text-light); margin-top:0.4rem;">By submitting this form you agree to our <a href="#" onclick="openModal('tcs'); return false;" style="color:var(--teal); text-decoration:none;">Terms and Conditions</a>.</p>
+    </form>
   </div>
 </section>
 
